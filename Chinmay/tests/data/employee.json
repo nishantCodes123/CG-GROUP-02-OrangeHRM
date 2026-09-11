@@ -1,0 +1,13 @@
+{
+  "credentials": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "employee": {
+    "firstName": "Nina",
+    "middleName": "Rose",
+    "lastName": "Patel",
+    "searchName": "John",
+    "expectedSearchName": "John Doe"
+  }
+}
