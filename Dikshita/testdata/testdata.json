@@ -1,0 +1,15 @@
+{
+  "application": {
+    "baseUrl": "https://opensource-demo.orangehrmlive.com/web/index.php",
+    "username": "Admin",
+    "password": "admin123"
+  },
+  "employee": {
+    "firstNamePrefix": "BDD",
+    "lastName": "Automation"
+  },
+  "search": {
+    "unknownEmployeePrefix": "NoSuchEmployee",
+    "knownEmployeeFirstName": "Amelia"
+  }
+}
