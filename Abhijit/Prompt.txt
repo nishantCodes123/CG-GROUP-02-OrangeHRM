@@ -1,0 +1,93 @@
+#Planner Agent to Create the Test Plan
+Act as a Senior QA Test Architect and generate a Test Plan for the OrangeHRM Demo Application [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login) using playwright-test-planner.agent.md agent
+
+Scope:
+1. Sidebar Search Functionality
+2. Admin → User Management Search Functionality
+
+Test Plan must include:
+
+- Objective
+- Scope and Out of Scope
+- Assumptions
+- Test Strategy
+- Test Environment
+- Test Data
+- Entry and Exit Criteria
+- Roles and Responsibilities
+- Test Deliverables
+- Automation Approach (POM + DDT)
+- Traceability Matrix
+
+For Sidebar Search, cover:
+- Search with exact menu name (Admin, PIM)
+- Search with partial text
+- Search with invalid/non-existing values
+- Clear search functionality
+- Navigation verification after selecting search result
+- UI validation and error handling
+
+For Admin User Search, cover:
+- Search by Username
+- Search by User Role
+- Search by Status
+- Search by Employee Name
+- Combined search criteria
+- Search existing user
+- Search non-existing user
+- Reset functionality
+- Result table validation
+- Empty result validation
+- Boundary, negative, and exploratory test scenarios
+
+Generate:
+- Functional Test Scenarios
+- Detailed Test Cases (ID, Preconditions, Steps, Test Data, Expected Result, Priority)
+- Positive, Negative, Boundary and End-to-End test cases
+- Automation candidates and priority matrix
+- Defect Severity/Priority classification
+
+Format the output as a professional QA Test Plan document suitable for project review and automation implementation.
+
+#Generator Agent for Generating the Test Script
+Using the generated OrangeHRM QA Test Plan (orangehrm-qa-test-plan.md), and using the Playwright Test Generation Agent.
+
+For every test scenario under:
+1. Sidebar Search Functionality
+2. Admin → User Management Search Functionality
+
+Instructions:
+
+- Read the complete test plan.
+- Analyze each scenario and automatically generate the corresponding Playwright TypeScript automation test.
+- Create one .spec.ts file per scenario.
+- Follow Playwright + TypeScript + POM framework standards.
+- Use existing Page Objects only; do not place locators in test files.
+- Keep login centralized in BasePage/Common Fixture.
+- Include step comments before each logical action.
+- Use robust assertions with expect().
+- Use dynamic waits only; no hardcoded timeouts.
+- Generate positive, negative, boundary and E2E scenarios from the test plan.
+- Reuse common utilities, fixtures, and helper methods.
+- Generate meaningful file names based on scenario names.
+
+- Ensure all generated tests are executable without further modification.
+- Follow clean code principles, maximum reusability, and maintainability.
+- Use best practices for locator stability, assertions, reporting, and test organization.
+
+Save all generated test files under:
+
+tests/sidebar-search/
+tests/admin-search/
+
+After generation, provide:
+
+1. List of created test files.
+2. Automation coverage summary.
+3. Test scenarios covered under E2E suites.
+4. Any scenarios that could not be automated and the corresponding reasons.
+5. Recommendations for framework improvements and additional edge-case coverage.
+
+
+#Healer Agent 
+Check for the HTML Report inside OrangeHrm\\playwright-report\\index.html go through it and heal every failed test cases and make sure every test cases pass use the playwright-test-healer-agent.md agent to do it.
